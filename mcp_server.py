@@ -35,7 +35,7 @@ def edit_document(
         raise ValueError(f"Doc with {doc_id} not found.")
     docs[doc_id] = docs[doc_id].replace(old_contents, new_contents)
 
-@mcp.resource("docs://documents/", mime_type="application/json")
+@mcp.resource("docs://documents", mime_type="application/json")
 def list_documents() -> list[str]:
     return list(docs.keys())
 
